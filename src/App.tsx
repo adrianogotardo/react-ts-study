@@ -1,9 +1,20 @@
-import React from 'react';
 import Teste from './Teste';
+import Testinho from './Testinho';
 
-function App () {
-  return (
-      <Teste text='hello world'></Teste>
+function App (): JSX.Element {
+    return (
+        <div>
+            <Teste text='hello world' handleChange={(e) => console.log("oi")} />
+
+            <Testinho>
+                {(count, setCount) => (
+                    <div>
+                        {count}
+                        <button onClick={() => setCount(count + 1)}>+</button>
+                    </div>
+                )}
+            </Testinho>
+        </div>
   );
 }
 
